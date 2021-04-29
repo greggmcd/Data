@@ -10,3 +10,6 @@ import numpy as np
 import pandas as pd
 import requests
 
+aus_weather = '/Users/grefgg/Desktop/weatherAUS.csv'
+data = pd.read_csv(aus_weather)
+data.head()

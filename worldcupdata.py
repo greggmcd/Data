@@ -19,14 +19,15 @@ import json
 #importing csv file world cup dataset from kaggle and creating a dataframe.
 worldcup_data = '/Users/grefgg/Documents/Data/WorldCupMatches.csv'
 world_cup_players = '/Users/grefgg/Documents/Data/WorldCupPlayers.csv'
-worldcup_matches_df = pd.read_csv(worldcup_data)
+worldcup__df = pd.read_csv(worldcup_data)
 worldcup_matches_df = pd.read_csv(world_cup_players)
 
 # Analysing data/ Cleaning data
 
 print(worldcup_matches_df.head())
 print(worldcup_matches_df.info())
-
+players = pd.read_csv(world_cup_players)
+print(players.head())
 # Replace missing values or dropping duplicates
 print(worldcup_matches_df.isnull().sum())
 print(worldcup_matches_df.head())
@@ -44,12 +45,13 @@ print(coaches.head())
 
 
 # Slicing, loc or iloc.
-
+team_event_df = new_index.iloc[3::6]
+print(team_event_df.head())
 # Looping, iterrows 
-next(new_index.iterrows())[3:]
+next(new_index.iterrows())[3:6]
 
 # Merge DataFrames 
-
+pd.merge(worldcup__df,world_cup_players)
 
 
 #	Define a custom function to create reusable code. 

@@ -40,7 +40,7 @@ new_index.drop_duplicates(subset= None, keep='first', inplace= False)
 print (new_index.head())
 teams = new_index.groupby('Team Initials')
 coaches = new_index.groupby('Coach Name')
-print(teams.first())
+print(teams.head())
 print(coaches.head())
 
 
@@ -51,7 +51,7 @@ print(team_event_df.head())
 next(new_index.iterrows())[3:6]
 
 # Merge DataFrames 
-pd.merge(worldcup__df,world_cup_players)
+
 
 
 #	Define a custom function to create reusable code. 

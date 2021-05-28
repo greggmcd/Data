@@ -42,7 +42,6 @@ players = players.groupby(['Team Initials','Event'])
 print(players.head())
 
 
-print(matches.head())
 
 matches = matches.set_index('Year')
 matches['Attendance'].fillna(method= 'ffill', inplace = True)
@@ -51,6 +50,8 @@ print (matches.head())
 
 total_goals = matches['Home Team Goals']+matches['Away Team Goals']
 matches['Total Goals']= total_goals
-matches.groupby(["Year"])["Total Goals"].sum()
-print(matches.head())
-sns.lineplot(data=matches, x="Year", y="Total Goals")
+
+matches_pivot = matches.pivot_table(index='Year', columns='City', values='Total Goals', aggfunc='count').fillna(0)
+print(matches_pivot.head())
+sns.pairplot(matches_pivot)
+

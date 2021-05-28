@@ -55,5 +55,21 @@ print(team_event_df.head())
 # Looping, iterrows 
 next(new_index.iterrows())[3:6]
 print(matches['Home Team Name'].value_counts())
+print(matches.head())
+
+matches = matches.set_index('Year')
+matches['Attendance'].fillna(method= 'ffill', inplace = True)
+print(matches.isnull().sum())
+print (matches.head())
+
+total_goals = matches['Home Team Goals']+matches['Away Team Goals']
+matches['Total Goals']= total_goals
+matches.groupby(["Year"])["Total Goals"].sum()
+print(matches.head())
+sns.lineplot(data=matches, x="Year", y="Total Goals", hue="")
+matches.groupby(["Year"])["Total Goals"].sum()
+print(matches.head())
+sns.lineplot(data=matches, x="Year", y="Total Goals")
+
 
 # Merge DataFrames 

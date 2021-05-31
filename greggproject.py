@@ -69,7 +69,9 @@ print(matches.head())
 sns.lineplot(data=matches, x="Year", y="Total Goals", hue="")
 matches.groupby(["Year"])["Total Goals"].sum()
 print(matches.head())
-sns.lineplot(data=matches, x="Year", y="Total Goals")
 
+total_goals = home + away
+total_goals= total_goals.cumsum()
+matches['Total Goals']= total_goals
 
 # Merge DataFrames 

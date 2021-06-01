@@ -6,8 +6,7 @@ Created on Tue May 18 09:39:10 2021
 @author: grefgg
 """
 
-from mpl_toolkits.mplot3d import Axes3D
-from sklearn.preprocessing import StandardScaler
+
 import matplotlib.pyplot as plt # plotting
 import numpy as np # linear algebra
 import os # accessing directory structure

@@ -12,7 +12,10 @@ import requests
 import json
 import matplotlib.pyplot as plt
 import seaborn as sns
+<<<<<<< HEAD
 
+=======
+>>>>>>> 30d4106f321b210cd8be281da6189261a09e4e3e
 aus_weather = '/Users/grefgg/Desktop/weatherAUS.csv'
 data_test= pd.read_csv(aus_weather)
 data_test.head()
@@ -25,6 +28,7 @@ print(data_test.values)
 print(data_test.plot.line(y='Sunshine'))
 print(sns.pairplot(data_test))
 print(data_test['Rainfall'].mean())
+<<<<<<< HEAD
 data_test.corr()
 print(sns.heatmap(data_test.corr()))
 
@@ -75,3 +79,5 @@ total_goals= total_goals.cumsum()
 matches['Total Goals']= total_goals
 
 # Merge DataFrames 
+=======
+>>>>>>> 30d4106f321b210cd8be281da6189261a09e4e3e
